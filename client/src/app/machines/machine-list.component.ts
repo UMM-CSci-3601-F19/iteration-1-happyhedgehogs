@@ -43,12 +43,18 @@ export class MachineListComponent implements OnInit {
     this.updateFilter();
   }
 
+  public updateRoom_id(newRoom_id: string): void {
+    this.machineRoom_id = newRoom_id;
+    this.updateFilter();
+  }
+
   public updateFilter() {
     this.filteredMachines =
       this.machineListService.filterMachines(
         this.machines,
         this.machineType,
-        this.machineRunning
+        this.machineRunning,
+        this.machineRoom_id
       );
   }
 

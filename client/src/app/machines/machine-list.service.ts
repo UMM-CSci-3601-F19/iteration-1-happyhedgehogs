@@ -24,7 +24,7 @@ export class MachineListService {
     return this.http.get<Machine>(this.machineUrl + '/' + id);
   }
 
-  public filterMachines(machines: Machine[], searchType: string, searchRunning: boolean): Machine[] {
+  public filterMachines(machines: Machine[], searchType: string, searchRunning: boolean, searchRoom_id: string): Machine[] {
 
     let filteredMachines = machines;
 
@@ -41,6 +41,12 @@ export class MachineListService {
     if (searchRunning != null) {
       filteredMachines = filteredMachines.filter(machine => {
         return machine.running == searchRunning;
+      });
+    }
+
+    if (searchRoom_id != null) {
+      filteredMachines = filteredMachines.filter(machine => {
+        return !searchRoom_id || machine.room_id == searchRoom_id;
       });
     }
 
