@@ -1,1 +1,63 @@
-<p>machine-list works!</p>
+<div>
+  <button id="addNewMachine" mat-raised-button (click)="openDialog()">Add New Machine</button>
+</div>
+
+
+<div layout-gt-sm="row">
+  <div flex-gt-sm="80" flex-offset-gt-sm="10">
+    <mat-card>
+      <mat-card-title id="machine-list-title">Machines</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            matInput
+            id="machineName" #input
+            type="text"
+            placeholder="Filter by name"
+            (input)="updateName($event.target.value)">
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            id="machineAge" #input
+            type="number"
+            placeholder="Filter by age"
+            (input)="updateAge($event.target.value)">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput id="machineStatus" #input type="search" placeholder="Search by status"
+                 [(ngModel)]="machineStatus"/>
+          <button mat-button id="statusClearSearch" type="button" *ngIf="machineStatus" matSuffix mat-icon-button
+                  aria-label="clear" (click)="machineStatus='';loadService()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">Submit
+        </button>
+
+        <mat-accordion *ngIf="machines; else machinesError">
+          <mat-expansion-panel #elem class="machines" [id]="machine.email" [expanded]="this.isHighlighted(machine)"
+                               *ngFor="let machine of this.filteredMachines">
+            <mat-expansion-panel-header>
+              <mat-panel-title matTooltip="email: {{machine.email}}">{{machine.name}}</mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <mat-panel-description>Works for {{machine.status}}</mat-panel-description>
+            <mat-panel-description>Age: {{machine.age}} years old</mat-panel-description>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
+        <ng-template #machinesError>
+          <mat-error>
+            There was a problem loading the machines. Possibly the server is down or perhaps there are network
+            issues.
+          </mat-error>
+          <mat-error>
+            Please wait a bit and try again or start the server.
+          </mat-error>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
