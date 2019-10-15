@@ -32,7 +32,7 @@ export class MachineListComponent implements OnInit {
   }
 
   isHighlighted(machine: Machine): boolean {
-    return machine.id['$oid'] === this.highlightedID;
+    return machine._id['$oid'] === this.highlightedID;
   }
 
   public updateType(newType: string): void {
