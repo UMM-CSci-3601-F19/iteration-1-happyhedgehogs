@@ -24,24 +24,39 @@ describe('Machine list', () => {
     machineListServiceStub = {
       getMachines: () => Observable.of([
         {
-          id: 'washer1_id',
+          _id: 'washer1_id',
+          name:'Washer1',
           type: 'Washer',
           running: true,
           status: 'Malfunctioning',
+          position: {
+            x: 0,
+            y: 0,
+          },
           room_id: 'gay_hall'
         },
         {
-          id: 'washer2_id',
+          _id: 'washer2_id',
+          name: 'Washer2',
           type: 'Washer',
           running: false,
           status: 'Functioning',
+          position: {
+            x: 0,
+            y: 0,
+          },
           room_id: 'spooner_hall'
         },
         {
-          id: 'Dryer_id',
+          _id: 'Dryer_id',
+          name: 'Dryer',
           type: 'Dryer',
           running: true,
           status: 'Functional',
+          position: {
+            x: 0,
+            y: 0,
+          },
           room_id: 'blakely_hall'
         }
       ])

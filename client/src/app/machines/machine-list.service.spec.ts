@@ -9,24 +9,39 @@ describe('Machine list service: ', () => {
   // A small collection of test machines
   const testMachines: Machine[] = [
       {
-        id: 'washer1_id',
+        _id: 'washer1_id',
+        name:'Washer1',
         type: 'Washer',
         running: true,
         status: 'Malfunctioning',
+        position: {
+          x: 0,
+          y: 0,
+        },
         room_id: 'gay_hall'
       },
       {
-        id: 'washer2_id',
+        _id: 'washer2_id',
+        name: 'Washer2',
         type: 'Washer',
         running: false,
         status: 'Functioning',
+        position: {
+          x: 0,
+          y: 0,
+        },
         room_id: 'spooner_hall'
       },
       {
-        id: 'Dryer_id',
+        _id: 'Dryer_id',
+        name: 'Dryer',
         type: 'Dryer',
         running: true,
         status: 'Functional',
+        position: {
+          x: 0,
+          y: 0,
+        },
         room_id: 'blakely_hall'
       }
     ];
@@ -83,7 +98,7 @@ describe('Machine list service: ', () => {
     req.flush(testMachines);
   });
 
-  it('getMachines(machineRoom_id) adds appropriate param string to called URL', () => {
+  it('getMachines(machineroom_id) adds appropriate param string to called URL', () => {
     machineListService.getMachines('m').subscribe(
       machines => expect(machines).toEqual(mMachines)
     );
@@ -93,7 +108,7 @@ describe('Machine list service: ', () => {
     req.flush(mMachines);
   });
 
-  it('filterByRoom_id(machineRoom_id) deals appropriately with a URL that already had a room_id', () => {
+  it('filterByroom_id(machineroom_id) deals appropriately with a URL that already had a room_id', () => {
     currentlyImpossibleToGenerateSearchMachineUrl = machineListService.baseUrl + '?room_id=f&something=k&';
     machineListService['machineUrl'] = currentlyImpossibleToGenerateSearchMachineUrl;
     machineListService.filterByRoom_id('m');
@@ -114,14 +129,14 @@ describe('Machine list service: ', () => {
     expect(machineListService['machineUrl']).toEqual(machineListService.baseUrl + '');
   });
 
-  it('getMachineById() calls api/machines/id', () => {
+  it('getMachineBy_id() calls api/machines/_id', () => {
     const targetMachine: Machine = testMachines[1];
-    const targetId: string = targetMachine.id;
-    machineListService.getMachineById(targetId).subscribe(
+    const target_id: string = targetMachine._id;
+    machineListService.getMachineById(target_id).subscribe(
       machine => expect(machine).toBe(targetMachine)
     );
 
-    const expectedUrl: string = machineListService.baseUrl + '/' + targetId;
+    const expectedUrl: string = machineListService.baseUrl + '/' + target_id;
     const req = httpTestingController.expectOne(expectedUrl);
     expect(req.request.method).toEqual('GET');
     req.flush(targetMachine);
