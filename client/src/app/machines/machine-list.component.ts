@@ -54,6 +54,10 @@ export class MachineListComponent implements OnInit {
     this.machineName = newName;
     this.updateFilter();
   }
+  public updateStatus(newStatus: string): void {
+    this.machineStatus = newStatus;
+    this.updateFilter();
+  }
 
   public updateFilter() {
     this.filteredMachines =

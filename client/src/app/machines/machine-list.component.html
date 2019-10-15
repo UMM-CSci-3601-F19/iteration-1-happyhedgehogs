@@ -5,20 +5,33 @@
       <mat-divider></mat-divider>
       <mat-card-content>
         <mat-form-field>
+          <mat-label>Location</mat-label>
+          <mat-select #input id="locationField" placeholder="Location" FormControlName="Location" [(value)]="machines">
+            <mat-option value=null>None</mat-option>
+            <mat-option value="the_apartments">The Apartments</mat-option>
+            <mat-option value="blakely">Blakely Hall</mat-option>
+            <mat-option value="gay">Gay Hall</mat-option>
+            <mat-option value="green_prairie">Green Prairie</mat-option>
+            <mat-option value="independence">Independence Hall</mat-option>
+            <mat-option value="pine">Pine Hall</mat-option>
+            <mat-option value="spooner">Spooner Hall</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
           <input
             matInput
-            id="machineName" #input
-            type="text"
-            placeholder="Filter by name"
-            (input)="updateName($event.target.value)">
+            id="machineType" #input
+            type="boolean"
+            placeholder="Filter by type"
+            (input)="updateType($event.target.value)">
         </mat-form-field>
         <mat-form-field>
           <input
             matInput
             id="machineRunning" #input
-            type="number"
-            placeholder="Filter by age"
-            (input)="updateAge($event.target.value)">
+            type="boolean"
+            placeholder="Filter by running"
+            (input)="updateRunning($event.target.value)">
         </mat-form-field>
         <mat-form-field>
           <input matInput id="machineStatus" #input type="search" placeholder="Search by status"
@@ -28,18 +41,11 @@
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>
-        <button mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">Submit
-        </button>
 
         <mat-accordion *ngIf="machines; else machinesError">
-          <mat-expansion-panel #elem class="machines" [id]="machine.email" [expanded]="this.isHighlighted(machine)"
-                               *ngFor="let machine of this.filteredMachines">
-            <mat-expansion-panel-header>
-              <mat-panel-title matTooltip="email: {{machine.email}}">{{machine.name}}</mat-panel-title>
-
-            </mat-expansion-panel-header>
+          <mat-expansion-panel #elem class="machines" *ngFor="let machine of this.filteredMachines">
             <mat-panel-description>Works for {{machine.status}}</mat-panel-description>
-            <mat-panel-description>Age: {{machine.age}} years old</mat-panel-description>
+            <mat-panel-description>Running: {{machine.running}}</mat-panel-description>
           </mat-expansion-panel>
         </mat-accordion>
         <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
