@@ -17,6 +17,7 @@ import {AddUserComponent} from './users/add-user.component';
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatRadioModule} from "@angular/material/radio";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MatOptionModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatRadioModule,
 
   ],
   declarations: [

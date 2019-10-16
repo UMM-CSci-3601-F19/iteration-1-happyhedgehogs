@@ -17,30 +17,34 @@
             <mat-option value="spooner">Spooner Hall</mat-option>
           </mat-select>
         </mat-form-field>
+
         <mat-form-field>
           <input
             matInput
-            id="machineType" #input
+            id="machineStatus" #input
             type="boolean"
-            placeholder="Filter by type"
-            (input)="updateType($event.target.value)">
+            placeholder="Filter by status"
+            (input)="updateStatus($event.target.value)">
         </mat-form-field>
-        <mat-form-field>
-          <input
-            matInput
-            id="machineRunning" #input
-            type="boolean"
-            placeholder="Filter by running"
-            (input)="updateRunning($event.target.value)">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput id="machineStatus" #input type="search" placeholder="Search by status"
-                 [(ngModel)]="machineStatus"/>
-          <button mat-button id="statusClearSearch" type="button" *ngIf="machineStatus" matSuffix mat-icon-button
-                  aria-label="clear" (click)="machineStatus='';loadService()">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
+
+        <section>
+          <mat-radio-group >
+            <label>Machine Occupied:</label>
+            <mat-radio-button value="true" (input)="updateRunning($event.target.value)">Yes</mat-radio-button>
+            <mat-radio-button value="false"(input)="updateRunning($event.target.value)">No</mat-radio-button>
+            <mat-radio-button value=null>Both</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section>
+          <mat-radio-group>
+            <label>Type of Machine:</label>
+            <mat-radio-button value="washer" (input)="updateType($event.target.value)">Washer</mat-radio-button>
+            <mat-radio-button value="dryer" (input)="updateType($event.target.value)">Dryer</mat-radio-button>
+            <mat-radio-button value=null>Both</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
 
         <mat-accordion *ngIf="machines; else machinesError">
           <mat-expansion-panel #elem class="machines" *ngFor="let machine of this.filteredMachines">
