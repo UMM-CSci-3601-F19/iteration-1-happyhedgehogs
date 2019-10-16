@@ -1,0 +1,722 @@
+[
+  {
+    "id": "5da67a4a84774b608e434472",
+    "name": "exercitation-nulla-amet",
+    "type": "washer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4a516f29fc949b5db4",
+    "name": "magna-laborum-tempor",
+    "type": "washer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4af8c49873d9586e16",
+    "name": "in-veniam-tempor",
+    "type": "dryer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4a5d08fa971f989df9",
+    "name": "dolore-reprehenderit-cupidatat",
+    "type": "dryer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4ac4b92f251ce5ff6a",
+    "name": "do-aliquip-commodo",
+    "type": "dryer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4acf7364c7be7cddf4",
+    "name": "ad-nulla-aliqua",
+    "type": "washer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4a6ac851a19f170c7e",
+    "name": "do-incididunt-aliqua",
+    "type": "dryer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4a7e5491f21731067c",
+    "name": "id-duis-ex",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4a77f0ad39ae59de4e",
+    "name": "enim-occaecat-sit",
+    "type": "dryer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4a3cbea6ddbc943ebf",
+    "name": "non-ut-nulla",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4a7e8525d84e962944",
+    "name": "deserunt-sunt-aliquip",
+    "type": "washer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4aacdcd9e01063fbe2",
+    "name": "excepteur-eiusmod-laboris",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4af461b51a63c6e146",
+    "name": "anim-dolor-consectetur",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4a7ac25196556271b1",
+    "name": "veniam-quis-eu",
+    "type": "dryer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4aba73d5bbdd83f10c",
+    "name": "velit-voluptate-sit",
+    "type": "washer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4aee48c2ba6dce3e94",
+    "name": "velit-occaecat-cillum",
+    "type": "washer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4a1f0afb58ef77ed01",
+    "name": "tempor-fugiat-Lorem",
+    "type": "dryer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4aa382f049ddfde2c4",
+    "name": "esse-et-ad",
+    "type": "washer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4acba335e0baec4d54",
+    "name": "exercitation-laborum-dolore",
+    "type": "dryer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4a4cd768d214f520ae",
+    "name": "duis-ad-cupidatat",
+    "type": "dryer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4af84f16d88cc8ec76",
+    "name": "commodo-laboris-id",
+    "type": "dryer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4adf0a56c04f0f8a7b",
+    "name": "minim-nulla-in",
+    "type": "dryer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4aaa7fb640c7d4578a",
+    "name": "nostrud-ullamco-in",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4aeec05e0e8440262d",
+    "name": "est-excepteur-labore",
+    "type": "dryer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4a2092114423c50cde",
+    "name": "dolor-veniam-laborum",
+    "type": "dryer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4aed8b2001010aedd1",
+    "name": "commodo-ex-minim",
+    "type": "washer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4a2502bc8cd9c0fa3c",
+    "name": "consectetur-reprehenderit-do",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4af097e23a8e97f4b3",
+    "name": "in-dolore-esse",
+    "type": "washer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4a83819ef54921e5d9",
+    "name": "exercitation-incididunt-ea",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4a289d6ac2c9a5c33e",
+    "name": "nostrud-pariatur-commodo",
+    "type": "dryer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4a232a20b105d708df",
+    "name": "exercitation-quis-duis",
+    "type": "washer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4aaa159fb0301ba3b2",
+    "name": "sit-anim-sint",
+    "type": "dryer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4a566c90af11e638f3",
+    "name": "consectetur-ullamco-velit",
+    "type": "dryer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4ae37e4d0e0c299150",
+    "name": "et-duis-non",
+    "type": "dryer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4a04002aa873eab514",
+    "name": "voluptate-ex-non",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4ab8157525960174d8",
+    "name": "cillum-exercitation-duis",
+    "type": "dryer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4ab50a52383c7ee481",
+    "name": "ex-anim-sunt",
+    "type": "washer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4a1511a08ebbfdaca8",
+    "name": "ipsum-veniam-aute",
+    "type": "washer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4aa237a14f9db99a6b",
+    "name": "eiusmod-incididunt-reprehenderit",
+    "type": "washer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4ac256f88bd87220ab",
+    "name": "aute-excepteur-commodo",
+    "type": "washer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4af60b656607dac20a",
+    "name": "aliquip-mollit-deserunt",
+    "type": "washer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4a21f36ca441a1c403",
+    "name": "id-aliquip-adipisicing",
+    "type": "washer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4a1e3b194fd95e9090",
+    "name": "dolor-est-ea",
+    "type": "washer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4a24467330f94aeb52",
+    "name": "pariatur-sint-ut",
+    "type": "dryer",
+    "running": false,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  },
+  {
+    "id": "5da67a4ac3570cd651de7fca",
+    "name": "adipisicing-mollit-occaecat",
+    "type": "dryer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4ab3bd54ef5c964e42",
+    "name": "cillum-sint-est",
+    "type": "washer",
+    "running": true,
+    "status": "broken",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4a3ef1f6b8bb0243a4",
+    "name": "mollit-incididunt-Lorem",
+    "type": "dryer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4a9379891c04671a0d",
+    "name": "ad-sunt-consequat",
+    "type": "dryer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4adfb31ac097d788a4",
+    "name": "est-aliqua-aliqua",
+    "type": "washer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4adbb330e9d048110d",
+    "name": "minim-magna-occaecat",
+    "type": "dryer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4a5c272ea5a5530045",
+    "name": "commodo-est-cillum",
+    "type": "dryer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4a66b792219338cdec",
+    "name": "ex-amet-sint",
+    "type": "washer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4aa670825afdecc85d",
+    "name": "deserunt-commodo-mollit",
+    "type": "washer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "gay"
+  },
+  {
+    "id": "5da67a4a15c7aef62d4ee96c",
+    "name": "sunt-elit-cillum",
+    "type": "washer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "blakely"
+  },
+  {
+    "id": "5da67a4a6279a137cc089b83",
+    "name": "consectetur-do-officia",
+    "type": "washer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4a423d6d01d8d571bc",
+    "name": "in-quis-sunt",
+    "type": "dryer",
+    "running": false,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "green_prairie"
+  },
+  {
+    "id": "5da67a4a55ab3ae9c5f0532e",
+    "name": "anim-ullamco-quis",
+    "type": "washer",
+    "running": true,
+    "status": "invisible",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "independence"
+  },
+  {
+    "id": "5da67a4a09d72b762d16b4ae",
+    "name": "proident-id-laborum",
+    "type": "washer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4a364a906c8e96404b",
+    "name": "do-eu-in",
+    "type": "dryer",
+    "running": true,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "spooner"
+  },
+  {
+    "id": "5da67a4ab5f7a9bd411e1892",
+    "name": "et-ullamco-fugiat",
+    "type": "washer",
+    "running": false,
+    "status": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "room_id": "the_apartments"
+  }
+]
