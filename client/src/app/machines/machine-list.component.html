@@ -6,7 +6,7 @@
       <mat-card-content>
         <mat-form-field>
           <mat-label>Location</mat-label>
-          <mat-select #input id="locationField" placeholder="Location" FormControlName="Location" [(value)]="machines">
+          <mat-select #input id="locationField" placeholder="Location" (input)="updateRoom_id($event.target.value)" FormControlName="Location">
             <mat-option value=null>None</mat-option>
             <mat-option value="the_apartments">The Apartments</mat-option>
             <mat-option value="blakely">Blakely Hall</mat-option>
@@ -22,34 +22,39 @@
           <input
             matInput
             id="machineStatus" #input
-            type="boolean"
+            type="text"
             placeholder="Filter by status"
             (input)="updateStatus($event.target.value)">
         </mat-form-field>
 
         <section>
-          <mat-radio-group >
+          <mat-radio-group>
             <label>Machine Occupied:</label>
             <mat-radio-button value="true" (input)="updateRunning($event.target.value)">Yes</mat-radio-button>
-            <mat-radio-button value="false"(input)="updateRunning($event.target.value)">No</mat-radio-button>
-            <mat-radio-button value=null>Both</mat-radio-button>
+            <mat-radio-button value="false" (input)="updateRunning($event.target.value)">No</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateRunning($event.target.value)">Both</mat-radio-button>
           </mat-radio-group>
         </section>
 
         <section>
-          <mat-radio-group>
+          <mat-radio-group (input)="updateType($event.target.value)">
             <label>Type of Machine:</label>
             <mat-radio-button value="washer" (input)="updateType($event.target.value)">Washer</mat-radio-button>
             <mat-radio-button value="dryer" (input)="updateType($event.target.value)">Dryer</mat-radio-button>
-            <mat-radio-button value=null>Both</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateType($event.target.value)">Both</mat-radio-button>
           </mat-radio-group>
         </section>
 
 
         <mat-accordion *ngIf="machines; else machinesError">
-          <mat-expansion-panel #elem class="machines" *ngFor="let machine of this.filteredMachines">
-            <mat-panel-description>Works for {{machine.status}}</mat-panel-description>
+          <mat-expansion-panel #elem class="machines" [id]="machineRoom_id" [expanded]="this.isHighlighted(machine)"
+                               *ngFor="let machine of this.filteredMachines">
+            <mat-expansion-panel-header>
+              <mat-panel-title matTooltip="room_id: {{machine.room_id}}">{{machine.name}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-panel-description>Status: {{machine.status}}</mat-panel-description>
             <mat-panel-description>Running: {{machine.running}}</mat-panel-description>
+            <mat-panel-description>Type: {{machine.type}}</mat-panel-description>
           </mat-expansion-panel>
         </mat-accordion>
         <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->

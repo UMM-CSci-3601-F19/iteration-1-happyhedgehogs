@@ -9,7 +9,7 @@ describe('Machine list service: ', () => {
   // A small collection of test machines
   const testMachines: Machine[] = [
       {
-        _id: 'washer1_id',
+        id: 'washer1_id',
         name:'Washer1',
         type: 'Washer',
         running: true,
@@ -21,7 +21,7 @@ describe('Machine list service: ', () => {
         room_id: 'gay_hall'
       },
       {
-        _id: 'washer2_id',
+        id: 'washer2_id',
         name: 'Washer2',
         type: 'Washer',
         running: false,
@@ -33,7 +33,7 @@ describe('Machine list service: ', () => {
         room_id: 'spooner_hall'
       },
       {
-        _id: 'Dryer_id',
+        id: 'Dryer_id',
         name: 'Dryer',
         type: 'Dryer',
         running: true,
@@ -131,7 +131,7 @@ describe('Machine list service: ', () => {
 
   it('getMachineBy_id() calls api/machines/_id', () => {
     const targetMachine: Machine = testMachines[1];
-    const target_id: string = targetMachine._id;
+    const target_id: string = targetMachine.id;
     machineListService.getMachineById(target_id).subscribe(
       machine => expect(machine).toBe(targetMachine)
     );

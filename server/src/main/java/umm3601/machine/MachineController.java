@@ -41,7 +41,7 @@ public class MachineController {
   public String getMachine(String id) {
     FindIterable<Document> jsonMachines
       = machineCollection
-      .find(eq("_id", new ObjectId(id)));
+      .find(eq("id", new ObjectId(id)));
 
     Iterator<Document> iterator = jsonMachines.iterator();
     if (iterator.hasNext()) {
@@ -118,7 +118,7 @@ public class MachineController {
     try {
       machineCollection.insertOne(newMachine);
       ObjectId id = newMachine.getObjectId("_id");
-      System.err.println("Successfully added new machine [_id=" + id + ", type=" + type + ", running=" + running + " status=" + status + " room_id=" + room_id + ']');
+      System.err.println("Successfully added new machine [id=" + id + ", type=" + type + ", running=" + running + " status=" + status + " room_id=" + room_id + ']');
       return id.toHexString();
     } catch (MongoException me) {
       me.printStackTrace();
