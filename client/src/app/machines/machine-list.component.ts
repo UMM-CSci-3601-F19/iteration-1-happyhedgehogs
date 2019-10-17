@@ -18,7 +18,7 @@ export class MachineListComponent implements OnInit {
   // These are the target values used in searching.
   // We should rename them to make that clearer.
   public machineType: string;
-  public machineRunning: boolean;
+  public machineRunning: string;
   public machineStatus: string;
   public machineName: string;
   public machineRoom_id: string;
@@ -32,7 +32,7 @@ export class MachineListComponent implements OnInit {
   }
 
   isHighlighted(machine: Machine): boolean {
-    return machine._id['$oid'] === this.highlightedID;
+    return machine.id['$oid'] === this.highlightedID;
   }
 
   public updateType(newType: string): void {
@@ -40,7 +40,7 @@ export class MachineListComponent implements OnInit {
     this.updateFilter();
   }
 
-  public updateRunning(newRunning:boolean): void {
+  public updateRunning(newRunning:string): void {
     this.machineRunning = newRunning;
     this.updateFilter();
   }
@@ -54,6 +54,10 @@ export class MachineListComponent implements OnInit {
     this.machineName = newName;
     this.updateFilter();
   }
+  public updateStatus(newStatus: string): void {
+    this.machineStatus = newStatus;
+    this.updateFilter();
+  }
 
   public updateFilter() {
     this.filteredMachines =
@@ -61,7 +65,8 @@ export class MachineListComponent implements OnInit {
         this.machines,
         this.machineType,
         this.machineRunning,
-        this.machineRoom_id
+        this.machineRoom_id,
+        this.machineStatus,
       );
   }
 

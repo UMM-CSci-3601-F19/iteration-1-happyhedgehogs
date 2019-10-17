@@ -24,32 +24,42 @@ export class MachineListService {
     return this.http.get<Machine>(this.machineUrl + '/' + id);
   }
 
-  public filterMachines(machines: Machine[], searchType: string, searchRunning: boolean, searchRoom_id: string): Machine[] {
+  public filterMachines(machines: Machine[], searchType: string, searchRunning: string, searchRoom_id: string, searchStatus: string): Machine[] {
 
     let filteredMachines = machines;
 
-    // Filter by name
-    if (searchType != null) {
+    // Filter by type
+    if (searchType != "null") {
       searchType = searchType.toLocaleLowerCase();
-
       filteredMachines = filteredMachines.filter(machine => {
         return !searchType || machine.type.toLowerCase().indexOf(searchType) !== -1;
       });
     }
 
-    // Filter by age
-    if (searchRunning != null) {
+    // Filter by running
+    if (searchRunning != "null") {
+      if (searchRunning == "true") {
       filteredMachines = filteredMachines.filter(machine => {
-        return machine.running == searchRunning;
-      });
+        return machine.running;
+      })};
+      if (searchRunning == "false") {
+        filteredMachines = filteredMachines.filter(machine => {
+          return machine.running == false;
+        })};
     }
 
     if (searchRoom_id != null) {
+      searchRoom_id = searchRoom_id.toLocaleLowerCase()
       filteredMachines = filteredMachines.filter(machine => {
-        return !searchRoom_id || machine.room_id == searchRoom_id;
-      });
-    }
+        return machine.room_id.toLowerCase().indexOf(searchRoom_id) !== -1;
+      })};
 
+      if (searchStatus != null) {
+        searchStatus = searchStatus.toLocaleLowerCase()
+        filteredMachines = filteredMachines.filter(machine => {
+          return machine.status.toLowerCase().indexOf(searchStatus) !== -1;
+        });
+      }
     return filteredMachines;
   }
 

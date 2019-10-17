@@ -5,41 +5,56 @@
       <mat-divider></mat-divider>
       <mat-card-content>
         <mat-form-field>
+          <mat-label>Location</mat-label>
+          <mat-select #input id="locationField" placeholder="Location"  FormControlName="Location">
+            <mat-option value=null (input)="updateRoom_id($event.target.value)">None</mat-option>
+            <mat-option value="the_apartments" (input)="updateRoom_id($event.target.value)">The Apartments</mat-option>
+            <mat-option value="blakely" (input)="updateRoom_id($event.target.value)">Blakely Hall</mat-option>
+            <mat-option value="gay" (input)="updateRoom_id($event.target.value)">Gay Hall</mat-option>
+            <mat-option value="green_prairie" (input)="updateRoom_id($event.target.value)">Green Prairie</mat-option>
+            <mat-option value="independence" (input)="updateRoom_id($event.target.value)">Independence Hall</mat-option>
+            <mat-option value="pine" (input)="updateRoom_id($event.target.value)">Pine Hall</mat-option>
+            <mat-option value="spooner" (input)="updateRoom_id($event.target.value)">Spooner Hall</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
           <input
             matInput
-            id="machineName" #input
+            id="machineStatus" #input
             type="text"
-            placeholder="Filter by name"
-            (input)="updateName($event.target.value)">
+            placeholder="Filter by status"
+            (input)="updateStatus($event.target.value)">
         </mat-form-field>
-        <mat-form-field>
-          <input
-            matInput
-            id="machineRunning" #input
-            type="number"
-            placeholder="Filter by age"
-            (input)="updateAge($event.target.value)">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput id="machineStatus" #input type="search" placeholder="Search by status"
-                 [(ngModel)]="machineStatus"/>
-          <button mat-button id="statusClearSearch" type="button" *ngIf="machineStatus" matSuffix mat-icon-button
-                  aria-label="clear" (click)="machineStatus='';loadService()">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        <button mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">Submit
-        </button>
+
+        <section>
+          <mat-radio-group>
+            <label>Machine Occupied:</label>
+            <mat-radio-button value="true" (input)="updateRunning($event.target.value)">Yes</mat-radio-button>
+            <mat-radio-button value="false" (input)="updateRunning($event.target.value)">No</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateRunning($event.target.value)">Both</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section>
+          <mat-radio-group (input)="updateType($event.target.value)">
+            <label>Type of Machine:</label>
+            <mat-radio-button value="washer" (input)="updateType($event.target.value)">Washer</mat-radio-button>
+            <mat-radio-button value="dryer" (input)="updateType($event.target.value)">Dryer</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateType($event.target.value)">Both</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
 
         <mat-accordion *ngIf="machines; else machinesError">
-          <mat-expansion-panel #elem class="machines" [id]="machine.email" [expanded]="this.isHighlighted(machine)"
+          <mat-expansion-panel #elem class="machines" [id]="machineRoom_id" [expanded]="this.isHighlighted(machine)"
                                *ngFor="let machine of this.filteredMachines">
             <mat-expansion-panel-header>
-              <mat-panel-title matTooltip="email: {{machine.email}}">{{machine.name}}</mat-panel-title>
-
+              <mat-panel-title matTooltip="room_id: {{machine.room_id}}">{{machine.name}}</mat-panel-title>
             </mat-expansion-panel-header>
-            <mat-panel-description>Works for {{machine.status}}</mat-panel-description>
-            <mat-panel-description>Age: {{machine.age}} years old</mat-panel-description>
+            <mat-panel-description>Status: {{machine.status}}</mat-panel-description>
+            <mat-panel-description>Running: {{machine.running}}</mat-panel-description>
+            <mat-panel-description>Type: {{machine.type}}</mat-panel-description>
           </mat-expansion-panel>
         </mat-accordion>
         <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
