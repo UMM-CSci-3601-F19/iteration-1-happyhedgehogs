@@ -33,33 +33,32 @@ export class MachineListService {
       searchType = searchType.toLocaleLowerCase();
       filteredMachines = filteredMachines.filter(machine => {
         return !searchType || machine.type.toLowerCase().indexOf(searchType) !== -1;
-      });
-    }
+      })};
+
 
     // Filter by running
     if (searchRunning != "null") {
       if (searchRunning == "true") {
       filteredMachines = filteredMachines.filter(machine => {
-        return machine.running;
+        return machine.running == true;
       })};
       if (searchRunning == "false") {
         filteredMachines = filteredMachines.filter(machine => {
           return machine.running == false;
-        })};
-    }
+        })}};
 
-    if (searchRoom_id != null) {
+    if (searchRoom_id != 'null') {
       searchRoom_id = searchRoom_id.toLocaleLowerCase()
       filteredMachines = filteredMachines.filter(machine => {
-        return machine.room_id.toLowerCase().indexOf(searchRoom_id) !== -1;
+        return !searchRoom_id || machine.room_id == searchRoom_id;
       })};
 
       if (searchStatus != null) {
         searchStatus = searchStatus.toLocaleLowerCase()
         filteredMachines = filteredMachines.filter(machine => {
           return machine.status.toLowerCase().indexOf(searchStatus) !== -1;
-        });
-      }
+        })};
+
     return filteredMachines;
   }
 
