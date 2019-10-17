@@ -6,15 +6,15 @@
       <mat-card-content>
         <mat-form-field>
           <mat-label>Location</mat-label>
-          <mat-select #input id="locationField" placeholder="Location"  FormControlName="Location">
-            <mat-option value=null (input)="updateRoom_id($event.target.value)">None</mat-option>
-            <mat-option value="the_apartments" (input)="updateRoom_id($event.target.value)">The Apartments</mat-option>
-            <mat-option value="blakely" (input)="updateRoom_id($event.target.value)">Blakely Hall</mat-option>
-            <mat-option value="gay" (input)="updateRoom_id($event.target.value)">Gay Hall</mat-option>
-            <mat-option value="green_prairie" (input)="updateRoom_id($event.target.value)">Green Prairie</mat-option>
-            <mat-option value="independence" (input)="updateRoom_id($event.target.value)">Independence Hall</mat-option>
-            <mat-option value="pine" (input)="updateRoom_id($event.target.value)">Pine Hall</mat-option>
-            <mat-option value="spooner" (input)="updateRoom_id($event.target.value)">Spooner Hall</mat-option>
+          <mat-select #select id="locationField" placeholder="location" FormControlName="Location">
+            <mat-option value='null'(selectstart)="updateRoom_id('null')">None</mat-option>
+            <mat-option value='the_apartments'(selectstart)="updateRoom_id('the_apartments')">The Apartments</mat-option>
+            <mat-option value='blakely'(selectstart)="updateRoom_id('blakely')">Blakely Hall</mat-option>
+            <mat-option value='gay'(selectstart)="updateRoom_id('gay')">Gay Hall</mat-option>
+            <mat-option value='green_prairie'(selectstart)="updateRoom_id('green_prairie')">Green Prairie</mat-option>
+            <mat-option value='independence'(selectstart)="updateRoom_id('independence')">Independence Hall</mat-option>
+            <mat-option value='pine'(selectstart)="updateRoom_id('pine')">Pine Hall</mat-option>
+            <mat-option value='spooner'(selectstart)="updateRoom_id('spooner')">Spooner Hall</mat-option>
           </mat-select>
         </mat-form-field>
 
@@ -37,7 +37,7 @@
         </section>
 
         <section>
-          <mat-radio-group (input)="updateType($event.target.value)">
+          <mat-radio-group>
             <label>Type of Machine:</label>
             <mat-radio-button value="washer" (input)="updateType($event.target.value)">Washer</mat-radio-button>
             <mat-radio-button value="dryer" (input)="updateType($event.target.value)">Dryer</mat-radio-button>
