@@ -8,5 +8,5 @@ export interface Machine {
     x: number;
     y: number;
   };
-  room_id: string; //'gay_hall','independence_hall','spooner','blakely','green_prairie'
+  room_id: string; //'gay','independence','spooner','blakely','green_prairie', 'the_apartments'
 }
