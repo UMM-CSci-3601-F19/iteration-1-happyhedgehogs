@@ -6,6 +6,8 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 import spark.utils.IOUtils;
+import umm3601.machine.MachineController;
+import umm3601.machine.MachineRequestHandler;
 import umm3601.user.UserController;
 import umm3601.user.UserRequestHandler;
 
@@ -15,15 +17,21 @@ import java.io.InputStream;
 public class Server {
   private static final String userDatabaseName = "dev";
   private static final int serverPort = 4567;
+  private static final String machineDatabaseName = "dev";
 
   public static void main(String[] args) {
 
     MongoClient mongoClient = new MongoClient();
     MongoDatabase userDatabase = mongoClient.getDatabase(userDatabaseName);
+    MongoDatabase machineDatabase = mongoClient.getDatabase(machineDatabaseName);
 
     UserController userController = new UserController(userDatabase);
     UserRequestHandler userRequestHandler = new UserRequestHandler(userController);
 
+    MachineController machineController = new MachineController(machineDatabase);
+    MachineRequestHandler machineRequestHandler = new MachineRequestHandler(machineController);
+
+    PollingService pollingService = new PollingService(mongoClient);
     //Configure Spark
     port(serverPort);
 
@@ -65,6 +73,13 @@ public class Server {
     get("api/users", userRequestHandler::getUsers);
     get("api/users/:id", userRequestHandler::getUserJSON);
     post("api/users/new", userRequestHandler::addNewUser);
+
+    // Machine Endpoints /////////////////////////
+
+    get("api/machines", machineRequestHandler::getMachines);
+    get("api/machines/:id",machineRequestHandler::getMachineJSON);
+    //this is a special tool for later!
+    //post("api/machines/new",machineRequestHandler::);
 
     // An example of throwing an unhandled exception so you can see how the
     // Java Spark debugger displays errors like this.

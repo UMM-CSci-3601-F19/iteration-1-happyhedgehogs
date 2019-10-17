@@ -1,1 +1,73 @@
-<p>machine-list works!</p>
+<div layout-gt-sm="row">
+  <div flex-gt-sm="80" flex-offset-gt-sm="10">
+    <mat-card>
+      <mat-card-title id="machine-list-title">Machines</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Location</mat-label>
+          <mat-select #select id="locationField" placeholder="location" FormControlName="Location">
+            <mat-option value='null'(selectstart)="updateRoom_id('null')">None</mat-option>
+            <mat-option value='the_apartments'(selectstart)="updateRoom_id('the_apartments')">The Apartments</mat-option>
+            <mat-option value='blakely'(selectstart)="updateRoom_id('blakely')">Blakely Hall</mat-option>
+            <mat-option value='gay'(selectstart)="updateRoom_id('gay')">Gay Hall</mat-option>
+            <mat-option value='green_prairie'(selectstart)="updateRoom_id('green_prairie')">Green Prairie</mat-option>
+            <mat-option value='independence'(selectstart)="updateRoom_id('independence')">Independence Hall</mat-option>
+            <mat-option value='pine'(selectstart)="updateRoom_id('pine')">Pine Hall</mat-option>
+            <mat-option value='spooner'(selectstart)="updateRoom_id('spooner')">Spooner Hall</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            id="machineStatus" #input
+            type="text"
+            placeholder="Filter by status"
+            (input)="updateStatus($event.target.value)">
+        </mat-form-field>
+
+        <section>
+          <mat-radio-group>
+            <label>Machine Occupied:</label>
+            <mat-radio-button value="true" (input)="updateRunning($event.target.value)">Yes</mat-radio-button>
+            <mat-radio-button value="false" (input)="updateRunning($event.target.value)">No</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateRunning($event.target.value)">Both</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section>
+          <mat-radio-group>
+            <label>Type of Machine:</label>
+            <mat-radio-button value="washer" (input)="updateType($event.target.value)">Washer</mat-radio-button>
+            <mat-radio-button value="dryer" (input)="updateType($event.target.value)">Dryer</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateType($event.target.value)">Both</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+
+        <mat-accordion *ngIf="machines; else machinesError">
+          <mat-expansion-panel #elem class="machines" [id]="machineRoom_id" [expanded]="this.isHighlighted(machine)"
+                               *ngFor="let machine of this.filteredMachines">
+            <mat-expansion-panel-header>
+              <mat-panel-title matTooltip="room_id: {{machine.room_id}}">{{machine.name}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-panel-description>Status: {{machine.status}}</mat-panel-description>
+            <mat-panel-description>Running: {{machine.running}}</mat-panel-description>
+            <mat-panel-description>Type: {{machine.type}}</mat-panel-description>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
+        <ng-template #machinesError>
+          <mat-error>
+            There was a problem loading the machines. Possibly the server is down or perhaps there are network
+            issues.
+          </mat-error>
+          <mat-error>
+            Please wait a bit and try again or start the server.
+          </mat-error>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
