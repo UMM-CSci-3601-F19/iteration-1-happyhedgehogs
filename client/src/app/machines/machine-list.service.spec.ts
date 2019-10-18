@@ -13,7 +13,7 @@ describe('Machine list service: ', () => {
         name:'Washer1',
         type: 'Washer',
         running: true,
-        status: 'Malfunctioning',
+        status: 'broken',
         position: {
           x: 0,
           y: 0,
@@ -25,7 +25,7 @@ describe('Machine list service: ', () => {
         name: 'Washer2',
         type: 'Washer',
         running: false,
-        status: 'Functioning',
+        status: 'normal',
         position: {
           x: 0,
           y: 0,
@@ -37,7 +37,7 @@ describe('Machine list service: ', () => {
         name: 'Dryer',
         type: 'Dryer',
         running: true,
-        status: 'Functional',
+        status: 'normal',
         position: {
           x: 0,
           y: 0,
@@ -145,27 +145,34 @@ describe('Machine list service: ', () => {
   it('machine list filters by type', () => {
     expect(testMachines.length).toBe(3);
     let machineType = 'a';
-    expect(machineListService.filterMachines(testMachines, machineType, null, null).length).toBe(2);
+    expect(machineListService.filterMachines(testMachines, machineType, null, null, null).length).toBe(2);
   });
 
   it('machine list filters by running', () => {
     expect(testMachines.length).toBe(3);
-    let machineRunning = true;
-    expect(machineListService.filterMachines(testMachines, null, machineRunning, null).length).toBe(2);
+    let machineRunning = 'true';
+    expect(machineListService.filterMachines(testMachines, null, machineRunning, null, null).length).toBe(2);
   });
 
   it('machine list filters by room_id', () => {
     expect(testMachines.length).toBe(3);
     let machineRoom_id = 'spooner_hall';
-    expect(machineListService.filterMachines(testMachines, null, null, machineRoom_id,).length).toBe(1);
+    expect(machineListService.filterMachines(testMachines, null, null, machineRoom_id, null).length).toBe(1);
+  });
+
+  it('machine list filters by room_id', () => {
+    expect(testMachines.length).toBe(3);
+    let machineStatus = 'broken';
+    expect(machineListService.filterMachines(testMachines, null, null, null, machineStatus).length).toBe(1);
   });
 
   it('machine list filters by type, running, and room_id', () => {
     expect(testMachines.length).toBe(3);
-    let machineRunning = true;
+    let machineRunning = 'true';
     let machineType = 'a';
     let machineRoom_id = 'gay_hall'
-    expect(machineListService.filterMachines(testMachines, machineType, machineRunning, machineRoom_id).length).toBe(1);
+    let machineStatus = 'broken'
+    expect(machineListService.filterMachines(testMachines, machineType, machineRunning, machineRoom_id, machineStatus).length).toBe(1);
   });
 
   it('contains a machine of type \'Dryer\'', () => {
