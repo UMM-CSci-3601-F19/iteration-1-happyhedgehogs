@@ -7,7 +7,7 @@
         <mat-form-field>
           <mat-label>Location</mat-label>
           <mat-select #select id="locationField" placeholder="location" FormControlName="Location">
-            <mat-option value='null'(selectstart)="updateRoom_id('null')">None</mat-option>
+            <mat-option value='null' (selectstart)="updateRoom_id(null)"  >None</mat-option>
             <mat-option value='the_apartments'(selectstart)="updateRoom_id('the_apartments')">The Apartments</mat-option>
             <mat-option value='blakely'(selectstart)="updateRoom_id('blakely')">Blakely Hall</mat-option>
             <mat-option value='gay'(selectstart)="updateRoom_id('gay')">Gay Hall</mat-option>
@@ -32,7 +32,7 @@
             <label>Machine Occupied:</label>
             <mat-radio-button value="true" (input)="updateRunning($event.target.value)">Yes</mat-radio-button>
             <mat-radio-button value="false" (input)="updateRunning($event.target.value)">No</mat-radio-button>
-            <mat-radio-button value="null" (input)="updateRunning($event.target.value)">Both</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateRunning(null)" checked >Both</mat-radio-button>
           </mat-radio-group>
         </section>
 
@@ -41,7 +41,7 @@
             <label>Type of Machine:</label>
             <mat-radio-button value="washer" (input)="updateType($event.target.value)">Washer</mat-radio-button>
             <mat-radio-button value="dryer" (input)="updateType($event.target.value)">Dryer</mat-radio-button>
-            <mat-radio-button value="null" (input)="updateType($event.target.value)">Both</mat-radio-button>
+            <mat-radio-button value="null" (input)="updateType(null)" checked >Both</mat-radio-button>
           </mat-radio-group>
         </section>
 

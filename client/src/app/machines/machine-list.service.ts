@@ -29,7 +29,7 @@ export class MachineListService {
     let filteredMachines = machines;
 
     // Filter by type
-    if (searchType != "null") {
+    if (searchType != null) {
       searchType = searchType.toLocaleLowerCase();
       filteredMachines = filteredMachines.filter(machine => {
         return !searchType || machine.type.toLowerCase().indexOf(searchType) !== -1;
@@ -37,7 +37,7 @@ export class MachineListService {
 
 
     // Filter by running
-    if (searchRunning != "null") {
+    if (searchRunning != null) {
       if (searchRunning == "true") {
       filteredMachines = filteredMachines.filter(machine => {
         return machine.running == true;
@@ -47,7 +47,7 @@ export class MachineListService {
           return machine.running == false;
         })}};
 
-    if (searchRoom_id != 'null') {
+    if (searchRoom_id != null) {
       searchRoom_id = searchRoom_id.toLocaleLowerCase()
       filteredMachines = filteredMachines.filter(machine => {
         return !searchRoom_id || machine.room_id == searchRoom_id;
